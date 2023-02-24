@@ -1,6 +1,6 @@
 {
-  "homepage": "http://localhost:4000",
-  "proxy": "http://localhost:4000",
+  "homepage": "https://backtsouq.onrender.com",
+  "proxy": "https://backtsouq.onrender.com",
   "name": "tsouq",
   "version": "0.1.0",
   "private": true,
@@ -19,6 +19,7 @@
     "chart.js": "^3.8.0",
     "country-state-city": "^3.0.1",
     "gapi-script": "^1.2.0",
+    "googleapis": "^111.0.0",
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",

@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { clearErrors, login } from "../../actions/userAction";
 import Loader from "../layout/Loader";
-import { GoogleLogin } from "react-google-login";
-import { gapi } from "gapi-script";
+// import { GoogleLogin } from "react-google-login";
+// import { gapi } from "gapi-script";
 import MetaData from "../layout/MetaData";
-import axios from "../../actions/axios";
+// import axios from "../../actions/axios";
 
 const Signin = () => {
   const alert = useAlert();
@@ -33,28 +33,28 @@ const Signin = () => {
     dispatch(login(email, password));
   };
 
-  gapi.load("client:auth2", () => {
-    window?.gapi?.client?.init({
-      clientId: "your client id will be display here",
-      plugin_name: "chat",
-    });
-  });
+  // gapi.load("client", () => {
+  //   gapi.client.init({
+  //     clientId: "your client id will be display here",
+  //     plugin_name: "chat",
+  //   });
+  // });
 
-  const responseSuccessGoogle = (response) => {
-    axios({
-      method: "POST",
-      url: "/api/v1/googleLogin",
-      data: { tokenId: response.tokenId },
-    }).then((res) => {
-      if (res.statusText === "OK") {
-        window.location = "/profile";
-      }
-    });
-  };
+  // const responseSuccessGoogle = (response) => {
+  //   axios({
+  //     method: "POST",
+  //     url: "/api/v1/googleLogin",
+  //     data: { tokenId: response.tokenId },
+  //   }).then((res) => {
+  //     if (res.statusText === "OK") {
+  //       window.location = "/profile";
+  //     }
+  //   });
+  // };
 
-  const responseFailureGoogle = (response) => {
-    console.log(response);
-  };
+  // const responseFailureGoogle = (response) => {
+  //   console.log(response);
+  // };
   let redirect = location.search ? location.search.split("=")[1] : "/profile";
   if (redirect === "shipping") {
     redirect = "/shipping";
@@ -93,7 +93,7 @@ const Signin = () => {
                   className="bg-gradient-to-r from-emerald-800 to-emerald-500 shadow-lg shadow-slate-300"
                 />
               </div>
-              <div dir="ltr" className="text-center my-6">
+              {/* <div dir="ltr" className="text-center my-6">
                 <GoogleLogin
                   clientId="14928484089-aq5ckopm9jf0eu8ricjapu1nin9fdami.apps.googleusercontent.com"
                   buttonText="سجل بواسطة جوجل"
@@ -103,7 +103,7 @@ const Signin = () => {
                   // uxMode='redirect'
                   className="ggl_btn"
                 />
-              </div>
+              </div> */}
               <label htmlFor="email" className="dark:text-slate-200">
                 البريد الالكتروني
               </label>
